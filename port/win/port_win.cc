@@ -249,8 +249,8 @@ namespace rocksdb {
 namespace port {
 
 __declspec(noinline) void WINAPI InitializeJemalloc() {
-  je_init();
-  atexit(je_uninit);
+//  je_init();
+//  atexit(je_uninit);
 }
 
 }  // port
@@ -282,7 +282,7 @@ const CRT_Startup_Routine p_rocksdb_init_jemalloc =
 #pragma comment(linker, "/INCLUDE:_p_rocksdb_init_jemalloc")
 
 #pragma section(".CRT$XCT", read)
-JEMALLOC_SECTION(".CRT$XCT") JEMALLOC_ATTR(used) static const void(
+JEMALLOC_SECTION(".CRT$XCT") JEMALLOC_ATTR(used) static void(
     WINAPI* p_rocksdb_init_jemalloc)(void) = rocksdb::port::InitializeJemalloc;
 
 #endif  // _WIN64

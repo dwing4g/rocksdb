@@ -1280,6 +1280,7 @@ void WinthreadCall(const char* label, std::error_code result) {
 }
 
 class WinEnv : public Env {
+  LARGE_INTEGER qpf;
  public:
   WinEnv();
 
@@ -1825,7 +1826,7 @@ class WinEnv : public Env {
     // just any microseconds because it is often used as an argument
     // to TimedWait() on condition variable
     FILETIME ftSystemTime;
-    GetSystemTimePreciseAsFileTime(&ftSystemTime);
+    GetSystemTimeAsFileTime(&ftSystemTime); // GetSystemTimePreciseAsFileTime
 
     LARGE_INTEGER li;
     li.LowPart = ftSystemTime.dwLowDateTime;
@@ -2250,7 +2251,6 @@ WinEnv::WinEnv()
   allocation_granularity_ = sinfo.dwAllocationGranularity;
 
   {
-    LARGE_INTEGER qpf;
     BOOL ret = QueryPerformanceFrequency(&qpf);
     assert(ret == TRUE);
     perf_counter_frequency_ = qpf.QuadPart;

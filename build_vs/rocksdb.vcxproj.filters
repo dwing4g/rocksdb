@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="port">
+      <UniqueIdentifier>{0f89554d-e1c2-4c69-92b9-002ab2bfec7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="table">
+      <UniqueIdentifier>{f8b92213-3320-4850-89a9-88e0226ffd72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="db">
+      <UniqueIdentifier>{069b9e9b-d1ce-4b55-bd3d-1d5692daaf68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{44e8aadb-7fad-48da-bcfd-756f97cd0e9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utilities">
+      <UniqueIdentifier>{ef97edc0-2d29-431a-9425-48ebe7016977}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gtest">
+      <UniqueIdentifier>{8f5680d2-e1c6-4f34-ab23-2ed38b16664b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lz4">
+      <UniqueIdentifier>{f4b504e9-a0a7-455f-9393-85d8f3a91824}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jemalloc">
+      <UniqueIdentifier>{e0a174e3-145e-4c37-8a5d-7516e0dd47e9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\db\builder.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\c.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\column_family.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\compacted_db_impl.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\compaction.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\compaction_job.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\compaction_picker.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\convenience.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\db_filesnapshot.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\db_impl.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\db_impl_debug.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\db_impl_experimental.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\db_impl_readonly.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\db_iter.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\dbformat.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\event_helpers.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\experimental.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\file_indexer.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\filename.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\flush_job.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\flush_scheduler.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\forward_iterator.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\internal_stats.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\log_reader.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\log_writer.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\managed_iterator.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\memtable.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\memtable_allocator.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\memtable_list.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\merge_helper.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\merge_operator.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\repair.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\slice.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\snapshot_impl.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\table_cache.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\table_properties_collector.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\transaction_log_impl.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\version_builder.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\version_edit.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\version_set.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\wal_manager.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\write_batch.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\write_batch_base.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\write_controller.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\db\write_thread.cc">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\port\stack_trace.cc">
+      <Filter>port</Filter>
+    </ClCompile>
+    <ClCompile Include="..\port\win\env_win.cc">
+      <Filter>port</Filter>
+    </ClCompile>
+    <ClCompile Include="..\port\win\port_win.cc">
+      <Filter>port</Filter>
+    </ClCompile>
+    <ClCompile Include="..\port\win\win_logger.cc">
+      <Filter>port</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\adaptive_table_factory.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\block.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\block_based_filter_block.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\block_based_table_builder.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\block_based_table_factory.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\block_based_table_reader.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\block_builder.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\block_hash_index.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\block_prefix_index.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\bloom_block.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\cuckoo_table_builder.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\cuckoo_table_factory.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\cuckoo_table_reader.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\flush_block_policy.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\format.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\full_filter_block.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\get_context.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\iterator.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\merger.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\meta_blocks.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\mock_table.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\plain_table_builder.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\plain_table_factory.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\plain_table_index.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\plain_table_key_coding.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\plain_table_reader.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\table_properties.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\table\two_level_iterator.cc">
+      <Filter>table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\arena.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\auto_roll_logger.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\bloom.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\build_version.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\cache.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\coding.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\compaction_job_stats_impl.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\comparator.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\crc32c.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\db_info_dumper.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\delete_scheduler_impl.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\dynamic_bloom.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\env.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\env_hdfs.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\event_logger.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\file_reader_writer.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\file_util.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\filter_policy.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\hash.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\hash_cuckoo_rep.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\hash_linklist_rep.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\hash_skiplist_rep.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\histogram.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\instrumented_mutex.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\iostats_context.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\ldb_cmd.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\ldb_tool.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\log_buffer.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\logging.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\memenv.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\mock_env.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\murmurhash.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\mutable_cf_options.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\options.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\options_builder.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\options_helper.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\perf_context.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\perf_level.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\rate_limiter.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\skiplistrep.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\slice.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\sst_dump_tool.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\statistics.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\status.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\status_message.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\string_util.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\sync_point.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\testharness.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\testutil.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\thread_local.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\thread_status_impl.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\thread_status_updater.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\thread_status_updater_debug.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\thread_status_util.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\thread_status_util_debug.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\vectorrep.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\xfunc.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\xxhash.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\db_test_util.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\backupable\backupable_db.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\checkpoint\checkpoint.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\document\document_db.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\document\json_document.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\document\json_document_builder.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\flashcache\flashcache.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\geodb\geodb_impl.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\leveldb_options\leveldb_options.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\merge_operators\string_append\stringappend.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\merge_operators\string_append\stringappend2.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\merge_operators\put.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\merge_operators\uint64add.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\redis\redis_lists.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\spatialdb\spatial_db.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\table_properties_collectors\compact_on_deletion_collector.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\transactions\optimistic_transaction_db_impl.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\transactions\optimistic_transaction_impl.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\transactions\transaction_base.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\transactions\transaction_db_impl.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\transactions\transaction_impl.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\transactions\transaction_lock_mgr.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\transactions\transaction_util.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\ttl\db_ttl_impl.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\write_batch_with_index\write_batch_with_index.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\write_batch_with_index\write_batch_with_index_internal.cc">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\third-party\gtest-1.7.0\fused-src\gtest\gtest-all.cc">
+      <Filter>gtest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lz4\lz4.c">
+      <Filter>lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\jemalloc.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lz4\lz4hc.c">
+      <Filter>lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\arena.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\atomic.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\base.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\bitmap.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\chunk.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\chunk_dss.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\chunk_mmap.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\ckh.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\ctl.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\extent.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\hash.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\huge.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\mb.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\mutex.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\pages.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\prof.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\quarantine.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\rtree.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\stats.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\tcache.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\tsd.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\util.c">
+      <Filter>jemalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="jni.cc" />
+  </ItemGroup>
+</Project>

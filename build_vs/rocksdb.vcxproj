@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{17CD93BF-8F57-4539-9F48-EE941D9AB2FF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>rocksdb</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <EmbedManifest>false</EmbedManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>LZ4=1;WIN32;_DEBUG;_WINDOWS;_USRDLL;ROCKSDB_EXPORTS;JEMALLOC_EXPORT=;OS_WIN;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;..\include;..\lz4;..\jemalloc;..\third-party\gtest-1.7.0\fused-src</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>LZ4=1;WIN32;NDEBUG;_WINDOWS;_USRDLL;ROCKSDB_EXPORTS;JEMALLOC_EXPORT=;OS_WIN;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AdditionalIncludeDirectories>..;..\include;..\lz4;..\jemalloc;..\third-party\gtest-1.7.0\fused-src</AdditionalIncludeDirectories>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\db\builder.cc" />
+    <ClCompile Include="..\db\c.cc" />
+    <ClCompile Include="..\db\column_family.cc" />
+    <ClCompile Include="..\db\compacted_db_impl.cc" />
+    <ClCompile Include="..\db\compaction.cc" />
+    <ClCompile Include="..\db\compaction_job.cc" />
+    <ClCompile Include="..\db\compaction_picker.cc" />
+    <ClCompile Include="..\db\convenience.cc" />
+    <ClCompile Include="..\db\dbformat.cc" />
+    <ClCompile Include="..\db\db_filesnapshot.cc" />
+    <ClCompile Include="..\db\db_impl.cc" />
+    <ClCompile Include="..\db\db_impl_debug.cc" />
+    <ClCompile Include="..\db\db_impl_experimental.cc" />
+    <ClCompile Include="..\db\db_impl_readonly.cc" />
+    <ClCompile Include="..\db\db_iter.cc" />
+    <ClCompile Include="..\db\event_helpers.cc" />
+    <ClCompile Include="..\db\experimental.cc" />
+    <ClCompile Include="..\db\filename.cc" />
+    <ClCompile Include="..\db\file_indexer.cc" />
+    <ClCompile Include="..\db\flush_job.cc" />
+    <ClCompile Include="..\db\flush_scheduler.cc" />
+    <ClCompile Include="..\db\forward_iterator.cc" />
+    <ClCompile Include="..\db\internal_stats.cc" />
+    <ClCompile Include="..\db\log_reader.cc" />
+    <ClCompile Include="..\db\log_writer.cc" />
+    <ClCompile Include="..\db\managed_iterator.cc" />
+    <ClCompile Include="..\db\memtable.cc" />
+    <ClCompile Include="..\db\memtable_allocator.cc" />
+    <ClCompile Include="..\db\memtable_list.cc" />
+    <ClCompile Include="..\db\merge_helper.cc" />
+    <ClCompile Include="..\db\merge_operator.cc" />
+    <ClCompile Include="..\db\repair.cc" />
+    <ClCompile Include="..\db\slice.cc">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)db_slice.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\db\snapshot_impl.cc" />
+    <ClCompile Include="..\db\table_cache.cc" />
+    <ClCompile Include="..\db\table_properties_collector.cc" />
+    <ClCompile Include="..\db\transaction_log_impl.cc" />
+    <ClCompile Include="..\db\version_builder.cc" />
+    <ClCompile Include="..\db\version_edit.cc" />
+    <ClCompile Include="..\db\version_set.cc" />
+    <ClCompile Include="..\db\wal_manager.cc" />
+    <ClCompile Include="..\db\write_batch.cc" />
+    <ClCompile Include="..\db\write_batch_base.cc" />
+    <ClCompile Include="..\db\write_controller.cc" />
+    <ClCompile Include="..\db\write_thread.cc" />
+    <ClCompile Include="..\jemalloc\arena.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)je_arena.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\atomic.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\base.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\bitmap.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\chunk.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\chunk_dss.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\chunk_mmap.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\ckh.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\ctl.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\extent.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\hash.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\huge.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\jemalloc.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\mb.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\mutex.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\pages.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\prof.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\quarantine.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\rtree.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\stats.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\tcache.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\tsd.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\jemalloc\util.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\lz4\lz4.c" />
+    <ClCompile Include="..\lz4\lz4hc.c" />
+    <ClCompile Include="..\port\stack_trace.cc" />
+    <ClCompile Include="..\port\win\env_win.cc" />
+    <ClCompile Include="..\port\win\port_win.cc" />
+    <ClCompile Include="..\port\win\win_logger.cc" />
+    <ClCompile Include="..\table\adaptive_table_factory.cc" />
+    <ClCompile Include="..\table\block.cc" />
+    <ClCompile Include="..\table\block_based_filter_block.cc" />
+    <ClCompile Include="..\table\block_based_table_builder.cc" />
+    <ClCompile Include="..\table\block_based_table_factory.cc" />
+    <ClCompile Include="..\table\block_based_table_reader.cc" />
+    <ClCompile Include="..\table\block_builder.cc" />
+    <ClCompile Include="..\table\block_hash_index.cc" />
+    <ClCompile Include="..\table\block_prefix_index.cc" />
+    <ClCompile Include="..\table\bloom_block.cc" />
+    <ClCompile Include="..\table\cuckoo_table_builder.cc" />
+    <ClCompile Include="..\table\cuckoo_table_factory.cc" />
+    <ClCompile Include="..\table\cuckoo_table_reader.cc" />
+    <ClCompile Include="..\table\flush_block_policy.cc" />
+    <ClCompile Include="..\table\format.cc" />
+    <ClCompile Include="..\table\full_filter_block.cc" />
+    <ClCompile Include="..\table\get_context.cc" />
+    <ClCompile Include="..\table\iterator.cc" />
+    <ClCompile Include="..\table\merger.cc" />
+    <ClCompile Include="..\table\meta_blocks.cc" />
+    <ClCompile Include="..\table\mock_table.cc" />
+    <ClCompile Include="..\table\plain_table_builder.cc" />
+    <ClCompile Include="..\table\plain_table_factory.cc" />
+    <ClCompile Include="..\table\plain_table_index.cc" />
+    <ClCompile Include="..\table\plain_table_key_coding.cc" />
+    <ClCompile Include="..\table\plain_table_reader.cc" />
+    <ClCompile Include="..\table\table_properties.cc" />
+    <ClCompile Include="..\table\two_level_iterator.cc" />
+    <ClCompile Include="..\third-party\gtest-1.7.0\fused-src\gtest\gtest-all.cc" />
+    <ClCompile Include="..\utilities\backupable\backupable_db.cc" />
+    <ClCompile Include="..\utilities\checkpoint\checkpoint.cc" />
+    <ClCompile Include="..\utilities\document\document_db.cc" />
+    <ClCompile Include="..\utilities\document\json_document.cc" />
+    <ClCompile Include="..\utilities\document\json_document_builder.cc" />
+    <ClCompile Include="..\utilities\flashcache\flashcache.cc" />
+    <ClCompile Include="..\utilities\geodb\geodb_impl.cc" />
+    <ClCompile Include="..\utilities\leveldb_options\leveldb_options.cc" />
+    <ClCompile Include="..\utilities\merge_operators\put.cc" />
+    <ClCompile Include="..\utilities\merge_operators\string_append\stringappend.cc" />
+    <ClCompile Include="..\utilities\merge_operators\string_append\stringappend2.cc" />
+    <ClCompile Include="..\utilities\merge_operators\uint64add.cc" />
+    <ClCompile Include="..\utilities\redis\redis_lists.cc" />
+    <ClCompile Include="..\utilities\spatialdb\spatial_db.cc" />
+    <ClCompile Include="..\utilities\table_properties_collectors\compact_on_deletion_collector.cc" />
+    <ClCompile Include="..\utilities\transactions\optimistic_transaction_db_impl.cc" />
+    <ClCompile Include="..\utilities\transactions\optimistic_transaction_impl.cc" />
+    <ClCompile Include="..\utilities\transactions\transaction_base.cc" />
+    <ClCompile Include="..\utilities\transactions\transaction_db_impl.cc" />
+    <ClCompile Include="..\utilities\transactions\transaction_impl.cc" />
+    <ClCompile Include="..\utilities\transactions\transaction_lock_mgr.cc" />
+    <ClCompile Include="..\utilities\transactions\transaction_util.cc" />
+    <ClCompile Include="..\utilities\ttl\db_ttl_impl.cc" />
+    <ClCompile Include="..\utilities\write_batch_with_index\write_batch_with_index.cc" />
+    <ClCompile Include="..\utilities\write_batch_with_index\write_batch_with_index_internal.cc" />
+    <ClCompile Include="..\util\arena.cc" />
+    <ClCompile Include="..\util\auto_roll_logger.cc" />
+    <ClCompile Include="..\util\bloom.cc" />
+    <ClCompile Include="..\util\build_version.cc" />
+    <ClCompile Include="..\util\cache.cc" />
+    <ClCompile Include="..\util\coding.cc" />
+    <ClCompile Include="..\util\compaction_job_stats_impl.cc" />
+    <ClCompile Include="..\util\comparator.cc" />
+    <ClCompile Include="..\util\crc32c.cc" />
+    <ClCompile Include="..\util\db_info_dumper.cc" />
+    <ClCompile Include="..\util\db_test_util.cc" />
+    <ClCompile Include="..\util\delete_scheduler_impl.cc" />
+    <ClCompile Include="..\util\dynamic_bloom.cc" />
+    <ClCompile Include="..\util\env.cc" />
+    <ClCompile Include="..\util\env_hdfs.cc" />
+    <ClCompile Include="..\util\event_logger.cc" />
+    <ClCompile Include="..\util\file_reader_writer.cc" />
+    <ClCompile Include="..\util\file_util.cc" />
+    <ClCompile Include="..\util\filter_policy.cc" />
+    <ClCompile Include="..\util\hash.cc" />
+    <ClCompile Include="..\util\hash_cuckoo_rep.cc" />
+    <ClCompile Include="..\util\hash_linklist_rep.cc" />
+    <ClCompile Include="..\util\hash_skiplist_rep.cc" />
+    <ClCompile Include="..\util\histogram.cc" />
+    <ClCompile Include="..\util\instrumented_mutex.cc" />
+    <ClCompile Include="..\util\iostats_context.cc" />
+    <ClCompile Include="..\util\ldb_cmd.cc" />
+    <ClCompile Include="..\util\ldb_tool.cc" />
+    <ClCompile Include="..\util\logging.cc" />
+    <ClCompile Include="..\util\log_buffer.cc" />
+    <ClCompile Include="..\util\memenv.cc" />
+    <ClCompile Include="..\util\mock_env.cc" />
+    <ClCompile Include="..\util\murmurhash.cc" />
+    <ClCompile Include="..\util\mutable_cf_options.cc" />
+    <ClCompile Include="..\util\options.cc" />
+    <ClCompile Include="..\util\options_builder.cc" />
+    <ClCompile Include="..\util\options_helper.cc" />
+    <ClCompile Include="..\util\perf_context.cc" />
+    <ClCompile Include="..\util\perf_level.cc" />
+    <ClCompile Include="..\util\rate_limiter.cc" />
+    <ClCompile Include="..\util\skiplistrep.cc" />
+    <ClCompile Include="..\util\slice.cc" />
+    <ClCompile Include="..\util\sst_dump_tool.cc" />
+    <ClCompile Include="..\util\statistics.cc" />
+    <ClCompile Include="..\util\status.cc" />
+    <ClCompile Include="..\util\status_message.cc" />
+    <ClCompile Include="..\util\string_util.cc" />
+    <ClCompile Include="..\util\sync_point.cc" />
+    <ClCompile Include="..\util\testharness.cc" />
+    <ClCompile Include="..\util\testutil.cc" />
+    <ClCompile Include="..\util\thread_local.cc" />
+    <ClCompile Include="..\util\thread_status_impl.cc" />
+    <ClCompile Include="..\util\thread_status_updater.cc" />
+    <ClCompile Include="..\util\thread_status_updater_debug.cc" />
+    <ClCompile Include="..\util\thread_status_util.cc" />
+    <ClCompile Include="..\util\thread_status_util_debug.cc" />
+    <ClCompile Include="..\util\vectorrep.cc" />
+    <ClCompile Include="..\util\xfunc.cc" />
+    <ClCompile Include="..\util\xxhash.cc" />
+    <ClCompile Include="jni.cc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
